@@ -1,0 +1,2 @@
+# haddock
+haddock test
