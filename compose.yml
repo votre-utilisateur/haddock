@@ -8,3 +8,26 @@ services:
       - "1313:1313"
       - "443:1313"
       - "80:1313"
+    networks:
+      - test
+
+  code-server:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /code-server/config:/config
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+    networks:
+      - test
+
+networks:
+  test:
+
+volumes:
+  some-data:
