@@ -1,0 +1,10 @@
+services:
+  server:
+    image: klakegg/hugo:latest
+    command: server
+    volumes:
+      - "./blog:/src"
+    ports:
+      - "1313:1313"
+      - "443:1313"
+      - "80:1313"
